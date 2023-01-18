@@ -1,4 +1,5 @@
 import React, { StatusBar } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import {
   useFonts,
   Inter_400Regular,
@@ -7,11 +8,11 @@ import {
   Inter_900Black
 } from '@expo-google-fonts/inter';
 
+import { Routes } from './src/routes';
+
 import { Background } from './src/components/Background';
 import { Loading } from './src/components/Loading';
-import { Header } from './src/components/Header';
 
-import { Home } from './src/screens/Home';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -29,8 +30,7 @@ export default function App() {
           backgroundColor="transparent"
           translucent
         />
-        <Header />
-        {fontsLoaded ? <Home /> : <Loading />}
+        {fontsLoaded ? <Routes /> : <Loading />}
       </Background>
     </>
   );

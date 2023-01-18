@@ -4,8 +4,10 @@ export const THEME = {
     BACKGROUND_800: '#18181B',
 
     TEXT: '#FFFFFF',
+    SUBTEXT: '#D7D5D5',
 
-    PRIMARY: '#BF8E0D'
+    PRIMARY: '#BF8E0D',
+    WHITE: '#FFFFFF'
   },
 
   FONT_FAMILY: {
