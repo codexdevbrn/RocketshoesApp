@@ -15,5 +15,4 @@ export const Container = styled.View`
   align-items: flex-start;
   margin: 70px 10px;
   padding: 10px;
-
 `;
