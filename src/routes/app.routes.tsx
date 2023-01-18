@@ -1,15 +1,15 @@
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import {Home} from '../screens/Home';
-import {Cart} from '../screens/Cart';
+import { Home } from '../screens/Home';
+import { Cart } from '../screens/Cart';
 
-const { Navigator, Screen } =  createNativeStackNavigator()
+const { Navigator, Screen } = createNativeStackNavigator()
 
 export function AppRoutes() {
-  return(
+  return (
     <Navigator>
-      <Screen name="home" component={Home}/>
-      <Screen name="cart" component={Cart}/>
+      <Screen name="home" component={Home} />
+      <Screen name="cart" component={Cart} />
     </Navigator>
   );
-  }
+}
