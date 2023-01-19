@@ -1,18 +1,19 @@
 import styled from 'styled-components/native';
 
 export const Image = styled.Image`
-max-width: 180px;
-max-height: 30px;
+max-width: 220px;
+max-height: 40px;
 `;
 
-export const LogoButton = styled.TouchableOpacity`
-
+export const CartButton = styled.TouchableOpacity`
+margin-right: 20px;
 `;
 
 export const Container = styled.View`
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start;
-  margin: 70px 10px;
+  align-items: center;
   padding: 10px;
+  margin: 30px 10px;
 `;
