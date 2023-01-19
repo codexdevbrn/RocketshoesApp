@@ -9,13 +9,14 @@ import { Image, Container, CartButton } from './styles';
 export function Header() {
   const navigation = useNavigation();
 
+  function goToCart() {
+    navigation.navigate('cart');
+  }
+
   function goBackHome() {
     navigation.navigate('home');
   }
 
-  function goToCart() {
-    navigation.navigate('cart');
-  }
 
   return (
     <Container>
