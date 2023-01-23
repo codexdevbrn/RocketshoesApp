@@ -1,13 +1,18 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { Home } from '../screens/Home';
+import Home from '../screens/Home';
 import { Cart } from '../screens/Cart';
+import { Header } from '../components/Header';
 
 const { Navigator, Screen } = createNativeStackNavigator()
 
 export function AppRoutes() {
   return (
-    <Navigator screenOptions={{headerShown: false}}>
+    <Navigator
+      screenOptions={{
+        header: (p) => <Header />
+      }}
+    >
       <Screen name='home' component={Home} />
       <Screen name='cart' component={Cart} />
     </Navigator>

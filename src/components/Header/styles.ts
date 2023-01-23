@@ -8,12 +8,11 @@ max-height: 40px;
 export const CartButton = styled.TouchableOpacity`
 margin-right: 20px;
 `;
-
 export const Container = styled.View`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  margin: 30px 10px;
+  margin: 50px 20px 0px 20px;
 `;

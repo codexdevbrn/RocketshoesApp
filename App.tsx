@@ -1,5 +1,4 @@
 import React, { StatusBar } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import {
   useFonts,
   Inter_400Regular,
@@ -9,9 +8,12 @@ import {
 } from '@expo-google-fonts/inter';
 
 import { Routes } from './src/routes';
+import { Provider } from 'react-redux';
+import './src/config/ReactotronConfig';
 
 import { Background } from './src/components/Background';
 import { Loading } from './src/components/Loading';
+import { store } from './src/store/store';
 
 
 export default function App() {
@@ -24,14 +26,16 @@ export default function App() {
 
   return (
     <>
-      <Background>
-        <StatusBar
-          barStyle="light-content"
-          backgroundColor="transparent"
-          translucent
-        />
-        {fontsLoaded ? <Routes /> : <Loading />}
-      </Background>
+      <Provider store={store}>
+        <Background>
+          <StatusBar
+            barStyle="light-content"
+            backgroundColor="transparent"
+            translucent
+          />
+          {fontsLoaded ? <Routes /> : <Loading />}
+        </Background>
+      </Provider>
     </>
   );
 }

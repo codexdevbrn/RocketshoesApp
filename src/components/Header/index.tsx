@@ -16,14 +16,12 @@ export function Header() {
   function goBackHome() {
     navigation.navigate('home');
   }
-
-
   return (
     <Container>
-      <TouchableOpacity onPress={() => goBackHome}>
+      <TouchableOpacity onPress={goBackHome}>
         <Image source={logoImg} />
       </TouchableOpacity>
-      <CartButton onPress={() => goToCart}>
+      <CartButton onPress={goToCart}>
         <Entypo
           name='shopping-basket'
           size={30}

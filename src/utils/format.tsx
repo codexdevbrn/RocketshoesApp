@@ -1,4 +1,9 @@
-export const { format: formatPrice } = new Intl.NumberFormat('pt-BR', {
-  style: 'currency',
-  currency: 'BRL',
-});
+import * as Localization from 'expo-localization';
+
+export function formatPrice(price: number): string {
+  return price.toLocaleString(Localization.locale,
+    {
+      style: 'currency',
+      currency: Localization.locale
+    });
+}
