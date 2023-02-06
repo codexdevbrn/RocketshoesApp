@@ -13,7 +13,7 @@ import './src/config/ReactotronConfig';
 
 import { Background } from './src/components/Background';
 import { Loading } from './src/components/Loading';
-import { store } from './src/store/store';
+import { store } from './src/features/store';
 
 
 export default function App() {

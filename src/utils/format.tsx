@@ -1,4 +1,4 @@
-import * as Localization from 'expo-localization';
+ import * as Localization from 'expo-localization';
 
 export function formatPrice(price: number): string {
   return price.toLocaleString(Localization.locale,
