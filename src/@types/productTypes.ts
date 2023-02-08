@@ -4,3 +4,8 @@ export interface ProductTypes {
   price: number;
   image: string;
 }
+
+export interface StockTypes {
+  id: number;
+  amount: number
+}

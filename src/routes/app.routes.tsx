@@ -10,7 +10,7 @@ export function AppRoutes() {
   return (
     <Navigator
       screenOptions={{
-        header: (p) => <Header />
+        header: () => <Header />
       }}
     >
       <Screen name='home' component={Home} />
