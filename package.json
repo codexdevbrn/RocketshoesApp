@@ -14,6 +14,7 @@
     "@react-navigation/native-stack": "^6.9.8",
     "@reduxjs/toolkit": "^1.9.1",
     "@types/axios": "^0.14.0",
+    "@types/json-server": "^0.14.4",
     "@types/react": "^18.0.27",
     "@types/react-native": "~0.70.6",
     "@types/react-redux": "^7.1.25",

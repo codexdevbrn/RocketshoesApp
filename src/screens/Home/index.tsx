@@ -20,15 +20,18 @@ function Home() {
 
     fetchProducts({ signal: controller.signal }).then(
       response => {
+        console.log(response.products)
+        console.log(response)
         dispatch(
           productsActions.setProducts({
-            products: response.products.map(product => ({
+            products: response.products.map((product) => ({
               ...product,
               price: Number(product.price),
             }))
           })
         )
-      }
+
+    }
     ).catch(error => {
       console.log(error)
     });
