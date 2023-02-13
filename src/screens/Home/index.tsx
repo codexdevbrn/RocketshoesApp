@@ -4,11 +4,12 @@ import { FlatList } from 'react-native';
 import { useDispatch } from 'react-redux';
 import { useProducts } from '../../hooks/useProducts';
 
-import { fetchProducts } from '../../utils/fecthProducts';
+import api from '../../utils/fecthProducts';
 import { productsActions } from '../../features/cart/productSlice';
 
-import { Product } from '../../components/Product';
-
+import Product from '../../components/Product';
+import { formatPrice } from '../../utils/format';
+import { ProductTypes } from '../../@types/productTypes';
 
 function Home() {
 
@@ -16,31 +17,26 @@ function Home() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const controller = new AbortController();
-
-    fetchProducts({ signal: controller.signal }).then(
+    async function loadProducts() {
+      await api.get('/products').then(
       response => {
-        console.log(response.products)
-        console.log(response)
         dispatch(
           productsActions.setProducts({
-            products: response.products.map((product) => ({
+            products: response.data.map((product: { price: number; }) => ({
               ...product,
-              price: Number(product.price),
+              price: formatPrice(product.price),
             }))
           })
         )
-
     }
     ).catch(error => {
       console.log(error)
     });
-
-    return () => {
-      controller.abort();
-    };
+  }
+  loadProducts();
   }, [dispatch]);
 
+  console.log(products)
   return (
     <SafeAreaView>
       <FlatList
