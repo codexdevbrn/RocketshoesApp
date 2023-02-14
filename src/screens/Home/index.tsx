@@ -7,9 +7,8 @@ import { useProducts } from '../../hooks/useProducts';
 import api from '../../utils/fecthProducts';
 import { productsActions } from '../../features/cart/productSlice';
 
-import Product from '../../components/Product';
+import { Product } from '../../components/Product';
 import { formatPrice } from '../../utils/format';
-import { ProductTypes } from '../../@types/productTypes';
 
 function Home() {
 
@@ -17,8 +16,7 @@ function Home() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    async function loadProducts() {
-      await api.get('/products').then(
+    api.get('/products').then(
       response => {
         dispatch(
           productsActions.setProducts({
@@ -28,12 +26,10 @@ function Home() {
             }))
           })
         )
-    }
+      }
     ).catch(error => {
       console.log(error)
     });
-  }
-  loadProducts();
   }, [dispatch]);
 
   console.log(products)
@@ -42,8 +38,8 @@ function Home() {
       <FlatList
         data={products}
         keyExtractor={item => String(item.id)}
-        renderItem={({item}) => (
-          <Product product={item} amount={0} />
+        renderItem={({ item }) => (
+          <Product product={item} />
         )}
         horizontal />
     </SafeAreaView>
@@ -51,3 +47,7 @@ function Home() {
 }
 
 export default Home;
+function useCart() {
+  throw new Error('Function not implemented.');
+}
+

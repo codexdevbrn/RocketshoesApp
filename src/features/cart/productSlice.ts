@@ -3,11 +3,11 @@ import { ProductTypes } from '../../@types/productTypes';
 import type { RootState } from '../store';
 
 export interface ProductsState {
-  products: ProductTypes[] | null;
+  products: ProductTypes[];
 }
 
 const initialState: ProductsState = {
-  products: null,
+  products: [],
 };
 
 const productsSlice = createSlice({
