@@ -14,17 +14,17 @@ import { formatPrice } from '../../utils/format';
 import { useDispatch } from '../../features/hooks/hook';
 import { ProductTypes } from '../../@types/productTypes';
 import { cartActions } from '../../features/cart/cartSlice';
-import * as Entypo from 'react-native-vector-icons/Entypo';
-import { useCart } from '../../hooks/useCart';
+
+/* import * as Entypo from 'react-native-vector-icons/Entypo'; */
+import { useFullCart } from '../../hooks/useFullCart';
 
 export interface ProductProps {
   product: ProductTypes;
-
 }
 
 export function Product( {product}: ProductProps) {
 
-  const cart = useCart();
+  const cart = useFullCart();
   const dispatch = useDispatch();
 
   function handleAddProduct() {
@@ -38,13 +38,13 @@ export function Product( {product}: ProductProps) {
         <ProductImg source={{ uri: product.image }} />
         <ProductTitle>{product.title}</ProductTitle>
         <ProductPrice>{formatPrice(product.price)}</ProductPrice>
-        {/* <AddButton onPress={() => handleAddProduct}>
+        <AddButton onPress={() => handleAddProduct}>
           <ProductAmount>
-            <Entypo name='shopping-cart' color="#FFF" size={20} />
-            <ProductAmountText>{amount[product.id] || 0}</ProductAmountText>
+            {/* <Entypo name='shopping-cart' color="#FFF" size={2} /> */}
+            <ProductAmountText>{cart?.length || 0}</ProductAmountText>
           </ProductAmount>
           <AddButtonText>ADICIONAR</AddButtonText>
-        </AddButton> */}
+        </AddButton>
       </Products>
     </>
   );

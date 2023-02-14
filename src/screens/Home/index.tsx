@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, {useEffect } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { FlatList } from 'react-native';
+
 import { useDispatch } from 'react-redux';
 import { useProducts } from '../../hooks/useProducts';
+import { productsActions } from '../../features/cart/productSlice';
 
 import api from '../../utils/fecthProducts';
-import { productsActions } from '../../features/cart/productSlice';
 
 import { Product } from '../../components/Product';
 import { formatPrice } from '../../utils/format';
@@ -47,7 +48,3 @@ function Home() {
 }
 
 export default Home;
-function useCart() {
-  throw new Error('Function not implemented.');
-}
-
