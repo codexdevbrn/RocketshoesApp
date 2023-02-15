@@ -10,12 +10,11 @@ import {
   Products
 } from './styles';
 
-import { formatPrice } from '../../utils/format';
+import { formattedValue } from '../../utils/format';
 import { useDispatch } from '../../features/hooks/hook';
 import { ProductTypes } from '../../@types/productTypes';
 import { cartActions } from '../../features/cart/cartSlice';
 
-/* import * as Entypo from 'react-native-vector-icons/Entypo'; */
 import { useFullCart } from '../../hooks/useFullCart';
 
 export interface ProductProps {
@@ -37,7 +36,7 @@ export function Product( {product}: ProductProps) {
       <Products key={product.title}>
         <ProductImg source={{ uri: product.image }} />
         <ProductTitle>{product.title}</ProductTitle>
-        <ProductPrice>{formatPrice(product.price)}</ProductPrice>
+        <ProductPrice>{formattedValue(product.price)}</ProductPrice>
         <AddButton onPress={() => handleAddProduct}>
           <ProductAmount>
             {/* <Entypo name='shopping-cart' color="#FFF" size={2} /> */}

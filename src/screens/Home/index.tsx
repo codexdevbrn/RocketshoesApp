@@ -9,7 +9,7 @@ import { productsActions } from '../../features/cart/productSlice';
 import api from '../../utils/fecthProducts';
 
 import { Product } from '../../components/Product';
-import { formatPrice } from '../../utils/format';
+import { Background } from '../../components/Background';
 
 function Home() {
 
@@ -23,7 +23,7 @@ function Home() {
           productsActions.setProducts({
             products: response.data.map((product: { price: number; }) => ({
               ...product,
-              price: formatPrice(product.price),
+              price: product.price,
             }))
           })
         )
@@ -35,6 +35,7 @@ function Home() {
 
   console.log(products)
   return (
+    <Background>
     <SafeAreaView>
       <FlatList
         data={products}
@@ -44,6 +45,8 @@ function Home() {
         )}
         horizontal />
     </SafeAreaView>
+  </Background>
+
   );
 }
 
