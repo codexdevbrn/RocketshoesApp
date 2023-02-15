@@ -3,8 +3,6 @@ import { ProductTypes } from "../@types/productTypes";
 import { useCart } from "./useCart";
 import { useProducts } from "./useProducts";
 
-
-
 export interface FullCartItem {
   product: ProductTypes;
   amount: number;
