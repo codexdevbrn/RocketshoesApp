@@ -1,7 +1,11 @@
 import React from 'react';
-import { View } from 'react-native';
+import { Carts } from '../../components/Cart';
+import { Background } from '../../components/Background';
+
 export function Cart() {
   return (
-    <View />
+    <Background>
+    <Carts />
+    </Background>
   );
 }
