@@ -10,6 +10,7 @@ import api from '../../utils/fecthProducts';
 
 import { Product } from '../../components/Product';
 import { formatPrice } from '../../utils/format';
+import { Background } from '../../components/Background';
 
 function Home() {
 
@@ -32,16 +33,19 @@ function Home() {
       console.log(error)
     });
   }, [dispatch]);
+
   return (
-    <SafeAreaView>
-      <FlatList
-        data={products}
-        keyExtractor={item => String(item.id)}
-        renderItem={({ item }) => (
-          <Product product={item} />
-        )}
-        horizontal />
-    </SafeAreaView>
+    <Background>
+      <SafeAreaView>
+        <FlatList
+          data={products}
+          keyExtractor={item => String(item.id)}
+          renderItem={({ item }) => (
+            <Product product={item} />
+          )}
+          horizontal />
+      </SafeAreaView>
+    </Background>
   );
 }
 
