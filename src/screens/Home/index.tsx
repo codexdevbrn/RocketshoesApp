@@ -1,4 +1,4 @@
-import React, {useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { FlatList } from 'react-native';
 
@@ -33,7 +33,6 @@ function Home() {
     });
   }, [dispatch]);
 
-  console.log(products)
   return (
     <Background>
     <SafeAreaView>

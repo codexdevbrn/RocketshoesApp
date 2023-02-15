@@ -21,7 +21,7 @@ export interface ProductProps {
   product: ProductTypes;
 }
 
-export function Product( {product}: ProductProps) {
+export function Product({ product }: ProductProps) {
 
   const cart = useFullCart();
   const dispatch = useDispatch();
@@ -29,7 +29,8 @@ export function Product( {product}: ProductProps) {
   function handleAddProduct() {
     dispatch(cartActions.addProduct({
       productsId: product.id,
-    }))
+    }),
+    );
   }
   return (
     <>
