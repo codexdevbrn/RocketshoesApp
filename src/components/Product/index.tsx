@@ -38,7 +38,7 @@ export function Product({ product }: ProductProps) {
         <ProductImg source={{ uri: product.image }} />
         <ProductTitle>{product.title}</ProductTitle>
         <ProductPrice>{formattedValue(product.price)}</ProductPrice>
-        <AddButton onPress={() => handleAddProduct}>
+        <AddButton onPress={handleAddProduct}>
           <ProductAmount>
             {/* <Entypo name='shopping-cart' color="#FFF" size={2} /> */}
             <ProductAmountText>{cart?.length || 0}</ProductAmountText>

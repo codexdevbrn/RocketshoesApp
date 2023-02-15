@@ -42,7 +42,7 @@ function Home() {
         renderItem={({ item }) => (
           <Product product={item} />
         )}
-        horizontal />
+        horizontal/>
     </SafeAreaView>
   </Background>
 
