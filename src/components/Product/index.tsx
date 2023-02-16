@@ -16,6 +16,7 @@ import { ProductTypes } from '../../@types/productTypes';
 import { cartActions } from '../../features/cart/cartSlice';
 
 import { useFullCart } from '../../hooks/useFullCart';
+import Entypo from 'react-native-vector-icons/Entypo'
 
 export interface ProductProps {
   product: ProductTypes;
@@ -40,7 +41,7 @@ export function Product({ product }: ProductProps) {
         <ProductPrice>{formattedValue(product.price)}</ProductPrice>
         <AddButton onPress={handleAddProduct}>
           <ProductAmount>
-            {/* <Entypo name='shopping-cart' color="#FFF" size={2} /> */}
+            <Entypo name='shopping-cart' color="#FFF" size={20} />
             <ProductAmountText>{cart?.length || 0}</ProductAmountText>
           </ProductAmount>
           <AddButtonText>ADICIONAR</AddButtonText>
